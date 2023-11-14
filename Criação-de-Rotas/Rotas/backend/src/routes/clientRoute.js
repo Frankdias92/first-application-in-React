@@ -12,10 +12,6 @@ router.get('/cliente', (req, res) => {
   res.status(404).send("Entrei na rota /cliente, e troquei o status");
 });
 
-// consigo adicionar outra rota
-router.get('/add', (req, res) => {
-  console.log('Entrei na minha rota /add');
-  res.status(201).send("Entrei na rota de add");
-})
+
 
 module.exports = router;
