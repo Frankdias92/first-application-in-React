@@ -9,6 +9,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // aqui estou setando a rota inicial
-app.use('/', clientRoute);
+app.use('/cliente', clientRoute);
 
 module.exports = app;
