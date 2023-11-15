@@ -1,8 +1,12 @@
 const clientes = [
-  {'id': 1,'nome': 'Franklin'},
-  {'id': 2,'nome': 'Monica'},
-  {'id': 3,'nome': 'Jessica'},
+  {'id': 1,'nome': 'Franklin', 'email':'teste@example.com', 'telefone':'12 12 21 21'},
+
+  {'id': 2,'nome': 'Monica', 'email':'teste@example.com', 'telefone':'12 12 21 21'},
+
+  {'id': 3,'nome': 'Jessica', 'email':'teste@example.com', 'telefone':'12 122121'},
 ];
+
+
 
 getClients = (req, res) => {
   res.status(200).send(clientes);
