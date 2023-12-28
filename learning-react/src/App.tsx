@@ -1,32 +1,54 @@
 import { ComponentWithProps } from "./components/ComponentProps"
 import { Constructor } from "./components/Constructor"
+import { Footer } from "./components/Footer/Footer"
 import { MyCounter } from "./components/MyCounter"
 import { MyFirstComponent } from "./components/MyFirstComponent"
 import { MyList } from "./components/MyList"
 import { SideEffect } from "./components/SideEffects"
+
+import './global.css'
 
 
 function App() {
 
   return (
     <>
-      <h1>Aprendendo React e suas funcionalidades</h1>
+      <div className="container-layout">
+        <h1>Aprendendo React e suas funcionalidades</h1>
 
-      <MyFirstComponent />
+        <MyFirstComponent />
 
-      <ComponentWithProps
-        title="Criando componentes com props"
-        text="As props são uma forma de passar dados de um componente pai para um componente filho, permitindo a reutilização e a personalização dos componentes."
-      />
+        <ComponentWithProps
+          title="Criando componentes com props"
+          text="As props são uma forma de passar dados de um componente pai para um componente filho, permitindo a reutilização e a personalização dos componentes."
+        />
 
-      <MyCounter />
+        <MyCounter />
 
-      <MyList />
+        <div className="wrapper">
+          <MyList />
+        </div>
 
-      <SideEffect />
+        <div className="grid-content">
+        
+          <div className="seperator">
+            <SideEffect />
+          </div>
 
-      <Constructor name="Franklin" level="" age={31} course="O codigo não quebra se faltar algum props"/>
+          <div>
+            <Constructor
+              name="Franklin" 
+              level="Junior" 
+              age={31} 
+              course="Front-End"
+            />
+          </div>
+        </div>
 
+
+      </div>
+
+      <Footer />
     </>
   )
 }

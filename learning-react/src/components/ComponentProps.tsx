@@ -5,7 +5,7 @@ type ComponentProps = {
 
 export function ComponentWithProps(props: ComponentProps) {
   return (
-    <div>
+    <div className="wrapper">
       <h3>{props.title}</h3>
       <p>{props.text}</p>
     </div>

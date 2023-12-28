@@ -7,7 +7,7 @@ interface ConstructorProps {
 
 export function Constructor(person: ConstructorProps ) {
   return (
-    <div>
+    <div className="avatar">
       <p>Nome: {person.name}</p>
       <p>Idade: {person.age}</p>
       <p>Cargo: {person.level}</p>

@@ -1,6 +1,6 @@
 export function MyFirstComponent() {
   return (
-    <article>
+    <article className="wrapper">
       <h2>Entendendo Componentes e Props no React</h2>
 
       <h3>O que são Componentes no React?</h3>

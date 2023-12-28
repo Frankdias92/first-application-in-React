@@ -12,31 +12,35 @@ export function MyCounter() {
   }
     if (counter > 5) {
       return (
-        <div>
+        <div className="wrapper">
           <p>Valor muito alto!</p>
-          <button onClick={incrementCounter}>+</button>
-          <button onClick={decrementCounter}>-</button>
+          <div className="container">
+            <button onClick={decrementCounter}>-</button>
+            <button onClick={incrementCounter}>+</button>
+          </div>
         </div>
       )
     } else if (counter < 0) {
       return (
-        <div>
+        <div className="wrapper">
           <p>Valor muito baixo!</p>
-          <button onClick={incrementCounter}>+</button>
-          <button onClick={decrementCounter}>-</button>
+          <div className="container">
+            <button onClick={decrementCounter}>-</button>
+            <button onClick={incrementCounter}>+</button>
+          </div>
         </div>
       )
     }
   
   
   return (
-    <>
-      <div>
+    <div className="wrapper" >
         <p>Meu Contator: {counter}</p>
-        <button onClick={incrementCounter}>+</button>
+      <div className="container">
         <button onClick={decrementCounter}>-</button>
+        <button onClick={incrementCounter}>+</button>
       </div>
     
-    </>
+    </div>
   )
 }

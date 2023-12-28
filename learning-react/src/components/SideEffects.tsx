@@ -26,7 +26,7 @@ export function SideEffect() {
 
   return (
     <div>
-      <input
+      <input className="input-form"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -36,7 +36,7 @@ export function SideEffect() {
     
       {products.map((item) => (
         <div key={item.id}>
-          <p>{item.value}</p>
+          <p className="item-list">{item.value}</p>
         </div>
       ))}
 

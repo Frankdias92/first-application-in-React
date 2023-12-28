@@ -1,0 +1,128 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+:root {
+  --btn-primary : #FFFF00;
+  --color-primary: #FFF;
+  --color-bg: #1D1D1D;
+  --color-1: #313329;
+  --color-2: #5D663D;
+  --color-3: #A9CC29;
+  --color-4: #FFFF00;
+}
+
+h2 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: 500;
+}
+p {
+  font-weight: 300;
+}
+
+.container-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 3rem;
+  line-height: 2;
+}
+.container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid rgba(111, 111, 111, 0.257);
+  padding: 3rem;
+}
+
+
+button {
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  background-color: var(--btn-primary);
+}
+button:hover {
+  filter: brightness(90%);
+  background-color: var(--color-primary);
+  transition: .3s;
+}
+button:active {
+  transform: scale(103%);
+}
+
+.input-form {
+  width: auto;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+	border: 0;
+	outline: 0;
+	padding: 1rem .3rem 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.item-list {
+  padding: 1rem 2rem;
+  background-color: var(--btn-primary);
+  color: var(--color-bg);
+  font-weight: 500;
+  margin: .3rem 0;
+  border-radius: 6px;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--color-1);
+  border-radius: 6px;
+  width: 400px;
+  margin: 0 auto auto;
+  height: auto;
+}
+
+.grid-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem;
+  gap: 2rem;
+  margin: auto;
+
+  height: 450px;
+}
+
+@media (max-width: 1350px) {
+  .grid-content {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    height: auto;
+  }
+  .seperator {
+    padding-bottom: 3rem;
+    border-bottom: 3px solid rgba(111, 111, 111, 0.257);
+    width: 100%;
+    margin: auto;
+  }
+  .avatar {
+    display: flex;
+    margin: 0;
+  }
+}
