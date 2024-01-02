@@ -1,20 +1,20 @@
 const clientes = [
   {
     id: 1,
-    nome: 'Franklin',
+    nome: 'user1',
     email: 'teste@example.com',
     telefone: '12 12 21 21'
   },
 
   {
     id: 2,
-    nome: 'Monica',
+    nome: 'user2',
     email: 'teste@example.com',
     telefone: '12 12 21 21'
   },
 
   { id: 3,
-    nome: 'Jessica',
+    nome: 'user3',
     email: 'teste@example.com',
     telefone: '12 122121'
   }
@@ -35,10 +35,12 @@ getOneClient = (req, res) => {
   res.status(200).send(client)
 }
 
+let nextClientId = clientes.length + 1; // evitando uma id repetida
 createClient = (req, res) => {
   const client = req.body
 
   if (Object.keys(client).length > 0) {
+    client.id = nextClientId++;
     clientes.push(client)
     res.status(201).send(client)
   } else {
@@ -51,7 +53,7 @@ updateClient = (req, res) => {
   let indice = findClientIndex(id)
 
   if (indice !== -1) {
-    clientes[indice] = req.body
+    clientes[indice] = {id: Number(id), ...req.body}
     res.status(201).send('Cliente Atualizado!')
   } else {
     res

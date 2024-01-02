@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { PencilSimple, TrashSimple } from "@phosphor-icons/react";
 
 const Table = styled.table`
   width: 100%;
@@ -33,6 +34,24 @@ export const Td = styled.td`
     ${(props) => props.onlyWeb && "display: none"}
   }
 `;
+const ButtonRed = styled.button`
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #E74C3C;
+  color: white;
+  height: 42px;
+`;
+const ButtonGreen = styled.button`
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #007458;
+  color: white;
+  height: 42px;
+`;
 
 const Grid = ({ users, getUsers }) => {
 
@@ -44,12 +63,26 @@ const Grid = ({ users, getUsers }) => {
       console.error('erro ao deletar', error);
     }
   }
+
+  const handlePut = async (id, newData) => {
+    try {
+      await axios.put(`http://localhost:3500/cliente/${id}`, newData);
+      getUsers();
+    } catch (error) {
+      console.error('erro ao atualizar', error);
+    }
+  }
+  const newData = {
+    nome: 'NewName',
+    email: 'newEmail@email.com',
+    telefone: '2023 - 2024'
+  }
   
   return (
     <Table>
       <Thead>
         <Tr>
-          <Th>#</Th>
+          <Th>Id</Th>
           <Th>Nome</Th>
           <Th>Email</Th>
           <Th onlyWeb>Fone</Th>
@@ -72,7 +105,14 @@ const Grid = ({ users, getUsers }) => {
               {item.telefone}
             </Td>            
             <td>
-              <button onClick={() => handleDelete(item.id)}>delet</button>
+              <ButtonRed onClick={() => handleDelete(item.id)}>
+                <TrashSimple />
+              </ButtonRed>
+            </td>
+            <td>
+              <ButtonGreen onClick={() => handlePut(item.id, newData)}>
+                <PencilSimple />
+              </ButtonGreen>
             </td>
           </Tr>
         ))}
