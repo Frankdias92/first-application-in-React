@@ -9,11 +9,11 @@ import "react-toastify/dist/ReactToastify.css";
 // import Navbar from "./components/navbar";
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 800px;
+  width: 900px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  margin: auto;
   align-items: center;
   gap: 10px;
 `;

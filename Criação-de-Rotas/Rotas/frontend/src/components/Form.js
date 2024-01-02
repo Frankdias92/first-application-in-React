@@ -6,22 +6,27 @@ import axios from "axios";
 
 const FormContainer = styled.form`
   display: flex;
+  width: 90%;
   align-items: flex-end;
   gap: 10px;
   flex-wrap: wrap;
-  background-color: #fff;
+  background-color: #313329;
+  color: #fff;
   padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #0001;
+  border-radius: 6px;
 `;
 
 const InputArea = styled.div`
   display: flex;
+  flex: 1;
+  width: auto;
+  margin: auto;
   flex-direction: column;
 `;
 
 const Input = styled.input`
-  width: 120px;
+  width: auto;
   padding: 0 10px;
   border: 1px solid #bbb;
   border-radius: 5px;
@@ -35,10 +40,17 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   border: none;
-  background-color: #2c73d2;
+  background-color: #007458;
   color: white;
   height: 42px;
+
+  :hover {
+    transform: scale(103%);
+    filter: brightness(90%);
+  }
 `;
+
+
 
 const Form = ({users,setUsers,getUsers}) => {  
   const saveData = async (e) => {

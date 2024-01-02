@@ -4,12 +4,12 @@ import axios from "axios";
 import { PencilSimple, TrashSimple } from "@phosphor-icons/react";
 
 const Table = styled.table`
-  width: 100%;
-  background-color: #fff;
+  width: 90%;
+  background-color: #313329;
+  color: #fff;
   padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
-  max-width: 1120px;
+  box-shadow: 0px 0px 6px 2px #0001;
+  border-radius: 6px;
   margin: 20px auto;
   word-break: break-all;
 `;
@@ -18,7 +18,7 @@ export const Tbody = styled.tbody``;
 export const Tr = styled.tr``;
 export const Th = styled.th`
   text-align: start;
-  border-bottom: inset;
+  border-bottom: inset 5px #fff;
   padding-bottom: 5px;
 
   @media (max-width: 500px) {
@@ -27,30 +27,37 @@ export const Th = styled.th`
 `;
 export const Td = styled.td`
   padding-top: 15px;
+  border-bottom: .7px solid #eee;
   text-align: ${(props) => (props.alignCenter ? "center" : "start")};
   width: ${(props) => (props.width ? props.width : "auto")};
-
   @media (max-width: 500px) {
     ${(props) => props.onlyWeb && "display: none"}
   }
 `;
 const ButtonRed = styled.button`
-  padding: 10px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 5px;
   border: none;
-  background-color: #E74C3C;
-  color: white;
-  height: 42px;
+  background-color: transparent;
+  color: #E74C3C;
 `;
 const ButtonGreen = styled.button`
-  padding: 10px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 5px;
   border: none;
-  background-color: #007458;
-  color: white;
-  height: 42px;
+  background-color: transparent;
+  color: #007458;
+`;
+
+const DivBtn = styled.div`
+display: flex;
+gap: 10px;
+width: auto;
+margin-left: 20px;
 `;
 
 const Grid = ({ users, getUsers }) => {
@@ -104,16 +111,19 @@ const Grid = ({ users, getUsers }) => {
             <Td width="20%" onlyWeb>
               {item.telefone}
             </Td>            
-            <td>
+            <td width="10%">
+            <DivBtn>
               <ButtonRed onClick={() => handleDelete(item.id)}>
                 <TrashSimple />
               </ButtonRed>
-            </td>
-            <td>
+
               <ButtonGreen onClick={() => handlePut(item.id, newData)}>
                 <PencilSimple />
               </ButtonGreen>
+            </DivBtn>
             </td>
+            
+            
           </Tr>
         ))}
       </Tbody>

@@ -6,14 +6,23 @@ const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
+    border: 0;
+    box-sizing: border-box;
   }
   
   body {
-    width: 100vw;
-    height: 100vh;
+    width: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
-    background-color: #f2f2f2;
+    margin: auto;
+    background-color: #121212;
+    color: #fff;
+  }
+
+  button:hover {
+    transform: scale(110%);
+    filter: brightness(90%);
   }
 `;
 
