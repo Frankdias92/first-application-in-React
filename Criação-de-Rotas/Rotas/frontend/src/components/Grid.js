@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Table = styled.table`
   width: 100%;
@@ -33,7 +34,16 @@ export const Td = styled.td`
   }
 `;
 
-const Grid = ({ users }) => {
+const Grid = ({ users, getUsers }) => {
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3500/cliente/${id}`);
+      getUsers();
+    } catch (error) {
+      console.error('erro ao deletar', error);
+    }
+  }
   
   return (
     <Table>
@@ -45,8 +55,8 @@ const Grid = ({ users }) => {
           <Th onlyWeb>Fone</Th>
         </Tr>
       </Thead>
+
       <Tbody>
-        
         {users.map((item, i) => (          
           <Tr key={i}>
             <Td alignCenter width="5%">
@@ -61,6 +71,9 @@ const Grid = ({ users }) => {
             <Td width="20%" onlyWeb>
               {item.telefone}
             </Td>            
+            <td>
+              <button onClick={() => handleDelete(item.id)}>delet</button>
+            </td>
           </Tr>
         ))}
       </Tbody>

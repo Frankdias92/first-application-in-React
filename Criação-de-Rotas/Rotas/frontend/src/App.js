@@ -40,7 +40,7 @@ function App() {
       <Container>
         <Title>Clientes</Title>
         <Form users={users} getUsers={getUsers}/>
-        <Grid users={users}/>
+        <Grid users={users} getUsers={getUsers}/>
       </Container>
       <ToastContainer autoClose={5000} position={toast.POSITION.BOTTOM_LEFT} />
       <GlobalStyle />
